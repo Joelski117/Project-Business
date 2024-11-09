@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Kundenbewertungen - Haus- und Gartenservice St. Gallen</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+            <h1>Haus- und Gartenservice St. Gallen</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="angebote.html">Angebote</a></li>
+                <li><a href="spezialangebote.html">Spezialangebote</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="ziele.html">Ziele</a></li>
+                <li><a href="bewertungen.html">Bewertungen</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Bewertungsbereich -->
+    <main>
+        <h2>Kundenbewertungen</h2>
+        
+        <!-- Bewertungsformular -->
+        <section class="submit-review">
+            <h2>Ihre Bewertung</h2>
+            <form action="submit_review.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="rating">Bewertung:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Bitte wählen</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+                
+                <label for="comment">Kommentar:</label>
+                <textarea id="comment" name="comment" rows="5" required></textarea>
+                
+                <!-- Honeypot-Feld (unsichtbar für Benutzer) -->
+                <div style="display:none;">
+                    <label for="website">Website (Honeypot)</label>
+                    <input type="text" id="website" name="website">
+                </div>
+                
+                <!-- Google reCAPTCHA (optional) -->
+                <div class="g-recaptcha" data-sitekey="6LcGyk0qAAAAAMCSzFZKi4JyZTDR4djH2kMUaywu"></div>
+                
+                <button type="submit">Bewertung absenden</button>
+            </form>
+        </section>
+        
+        <!-- Anzeigen der Bewertungen -->
+        <section class="reviews">
+            <h2>Kundenbewertungen</h2>
+            <?php include 'fetch_reviews.php'; ?>
+            
+        </section>
+        
+        <!-- Link zurück zur Startseite -->
+        <p class="back-to-home"><a href="index.html">Zurück zur Startseite</a></p>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Haus- und Gartenservice St. Gallen</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/deinprofil" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/deinprofil" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.twitter.com/deinprofil" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <!-- Weitere Social Media Links -->
+        </div>
+    </footer>
+</body>
+</html>

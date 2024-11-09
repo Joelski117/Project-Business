@@ -1,0 +1,558 @@
+/* Grundlegendes Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header und Navigation */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #004080;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0066cc;
+}
+
+/* Hero-Bereich */
+.hero {
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    background-color: rgba(0, 64, 128, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.button {
+    background-color: #0066cc;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #004080;
+}
+
+/* Leistungen */
+.leistungen {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.leistungen h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #004080;
+}
+
+.leistung-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.leistung {
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.leistung img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.leistung h3 {
+    margin-top: 15px;
+    color: #0066cc;
+}
+
+.leistung:hover {
+    transform: translateY(-10px);
+}
+
+/* Angebote */
+.angebote {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.angebot {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s;
+}
+
+.angebot img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.angebot h3 {
+    margin: 0;
+    padding: 15px;
+    background-color: #e6f0ff;
+    color: #004080;
+}
+
+.angebot p {
+    padding: 15px;
+    color: #555;
+}
+
+.preis {
+    font-weight: bold;
+    color: #0066cc;
+    margin-top: 10px;
+}
+
+.hinweis {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.angebot:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Disclaimer */
+.disclaimer {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+/* Link zurück zur Startseite */
+.back-to-home {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-to-home a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-home a:hover {
+    text-decoration: underline;
+}
+
+/* Über uns */
+.ueber-uns {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.ueber-uns .team-bild {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: rotateIn 1s;
+}
+
+.ueber-uns p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+/* Kontakt */
+.kontakt-info {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.kontakt-info p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Sticky Navigation */
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #ccc;
+}
+
+header.sticky + main {
+    padding-top: 100px;
+}
+
+/* Footer */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rotateIn {
+    from { transform: rotate(-360deg); opacity: 0; }
+    to { transform: rotate(0); opacity: 1; }
+}
+
+/* Animationen für Fade-in-Effekt */
+.before-appear {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leistung-grid, .angebote {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    nav li {
+        margin: 5px 0;
+    }
+    .hero h2 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+}
+/* Fortschrittsbalken (Progress Bar) */
+.progress-container {
+    width: 80%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 30px;
+    width: 0%;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 25px 0 0 25px;
+    transition: width 0.5s ease-in-out;
+    position: relative;
+}
+
+#progress-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* Zusätzliche Stile für die Ziele-Seite */
+.ziel-stand {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+/* Zentriere den Text und die Titel in allen Hauptinhalten */
+main {
+    text-align: center;
+}
+
+/* Optional: Spezifische Elemente explizit zentrieren */
+h1, h2, h3, p {
+    text-align: center;
+}
+
+/* Optional: Zentriere den Inhalt innerhalb von Sektionen */
+.section-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Beispiel für die Zentrierung von Angeboten */
+.angebote {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentriert die Angebote horizontal */
+    padding: 50px 20px;
+    text-align: center; /* Zentriert den Text innerhalb der Angebote */
+}
+
+/* Zusätzliche Anpassungen, falls notwendig */
+header .logo {
+    justify-content: center; /* Zentriert das Logo im Header */
+}
+
+nav ul {
+    justify-content: center; /* Zentriert die Navigationselemente */
+}
+
+footer {
+    text-align: center; /* Zentriert den Footer-Text */
+}
+/* Bewertungsformular */
+.submit-review, .reviews {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.submit-review h2, .reviews h2 {
+    color: #004080;
+    margin-bottom: 30px;
+}
+
+.submit-review form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.submit-review label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.submit-review input[type="text"],
+.submit-review input[type="email"],
+.submit-review select,
+.submit-review textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-review button {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-review button:hover {
+    background-color: #004080;
+}
+
+/* Bewertungen */
+.reviews .review {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.reviews .review h4 {
+    margin-bottom: 5px;
+    color: #0066cc;
+}
+
+.reviews .review .rating {
+    color: #FFD700; /* Goldene Sterne */
+    margin-bottom: 10px;
+}
+
+.reviews .review p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.reviews .review .date {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Social Media Icons */
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Back to Home Link */
+.back-to-home {
+    margin-top: 30px;
+}
+
+.back-to-home a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-home a:hover {
+    text-decoration: underline;
+}
+/* Admin-Seite */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.admin-login form, .admin-logout a {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.admin-login label, .admin-logout a {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.admin-login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-login button, .admin-logout a {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.admin-login button:hover, .admin-logout a:hover {
+    background-color: #004080;
+}
